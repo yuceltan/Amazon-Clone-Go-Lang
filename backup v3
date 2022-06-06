@@ -1,0 +1,300 @@
+--
+-- PostgreSQL database cluster dump
+--
+
+-- Started on 2022-04-25 00:03:48
+
+SET default_transaction_read_only = off;
+
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+
+--
+-- Roles
+--
+
+CREATE ROLE postgres;
+ALTER ROLE postgres WITH SUPERUSER INHERIT CREATEROLE CREATEDB LOGIN REPLICATION BYPASSRLS PASSWORD 'SCRAM-SHA-256$4096:VVUYFm28pHXvRLbovEzXHA==$9WlVO5IJdKjc3xQdeRuILSS7QO5ft/eYVpcUEsp97vw=:VKXcLkcQw9uA4jvnO1kSowW1tskdy2to3Oyj1pM77Og=';
+
+
+
+
+
+
+--
+-- Databases
+--
+
+--
+-- Database "template1" dump
+--
+
+\connect template1
+
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 14.2 (Debian 14.2-1.pgdg110+1)
+-- Dumped by pg_dump version 14.1
+
+-- Started on 2022-04-25 00:03:48
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+-- Completed on 2022-04-25 00:03:48
+
+--
+-- PostgreSQL database dump complete
+--
+
+--
+-- Database "postgres" dump
+--
+
+\connect postgres
+
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 14.2 (Debian 14.2-1.pgdg110+1)
+-- Dumped by pg_dump version 14.1
+
+-- Started on 2022-04-25 00:03:48
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- TOC entry 212 (class 1259 OID 32769)
+-- Name: posts; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.posts (
+    id integer NOT NULL,
+    title character varying(255) NOT NULL,
+    body character varying(550) NOT NULL,
+    owner_id integer,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE public.posts OWNER TO postgres;
+
+--
+-- TOC entry 211 (class 1259 OID 32768)
+-- Name: posts_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.posts_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.posts_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 3328 (class 0 OID 0)
+-- Dependencies: 211
+-- Name: posts_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.posts_id_seq OWNED BY public.posts.id;
+
+
+--
+-- TOC entry 210 (class 1259 OID 24608)
+-- Name: users; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.users (
+    id integer NOT NULL,
+    first_name character varying(255) NOT NULL,
+    last_name character varying(255) NOT NULL,
+    email character varying(255) NOT NULL,
+    password character varying(255) NOT NULL,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE public.users OWNER TO postgres;
+
+--
+-- TOC entry 209 (class 1259 OID 24607)
+-- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.users_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.users_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 3329 (class 0 OID 0)
+-- Dependencies: 209
+-- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.users_id_seq OWNED BY public.users.id;
+
+
+--
+-- TOC entry 3173 (class 2604 OID 32772)
+-- Name: posts id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.posts ALTER COLUMN id SET DEFAULT nextval('public.posts_id_seq'::regclass);
+
+
+--
+-- TOC entry 3172 (class 2604 OID 24611)
+-- Name: users id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.users_id_seq'::regclass);
+
+
+--
+-- TOC entry 3322 (class 0 OID 32769)
+-- Dependencies: 212
+-- Data for Name: posts; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.posts (id, title, body, owner_id, created_at, updated_at) FROM stdin;
+1	asdasdas	 asdasdasdas	17	2022-04-24 21:03:11.868997	2022-04-24 21:03:11.868997
+2	yuceltan	 yuceltan ebiri	17	2022-04-24 21:11:56.0108	2022-04-24 21:11:56.0108
+3	deneme	asldjkasdjaskdaas 	17	2022-04-24 22:08:55.388841	2022-04-24 22:08:55.388841
+4	deneme 2	yuceltan askdjasdkasjda 	17	2022-04-24 22:09:03.796974	2022-04-24 22:09:03.796974
+5	sadkasdsa	ksajdklasjfasklfjasf 	17	2022-04-24 22:09:07.646445	2022-04-24 22:09:07.646445
+6	dasdkjaskdjaskd	skadjaskdjaskdjas 	17	2022-04-24 22:09:11.588249	2022-04-24 22:09:11.588249
+7	askjdkasjdkasj	kasjdkasjdkasdjkasdjaskjdaskdjaskdjaskdjaskdas 	17	2022-04-24 23:36:19.440298	2022-04-24 23:36:19.440298
+8	mailhog example	mailhog example lorem ipsummmm 	17	2022-04-24 23:56:36.446359	2022-04-24 23:56:36.446359
+\.
+
+
+--
+-- TOC entry 3320 (class 0 OID 24608)
+-- Dependencies: 210
+-- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.users (id, first_name, last_name, email, password, created_at, updated_at) FROM stdin;
+1	Kamil	Kowalski	kamil@example.com	xxx	2022-03-31 00:00:00	2022-03-31 00:00:00
+2	Maciej	Nowak	maciej@example.com	yyy	2022-03-31 00:00:00	2022-03-31 00:00:00
+3	Yücel Tan	ebiri	yuceltanebiri@outlook.com	$2a$12$l1YxdM6qbt8ueSKISGmwMO6txBRRaVqddQG6QX2mykOIdITUPZ9Au	2022-04-04 11:45:40.635619	2022-04-04 11:45:40.635619
+4	user1	resu1	user1@gmaiil.com	$2a$12$pig2EbqnvlecIvgxLQs/zOU5QY.Oo/h1Isp4uF1XUFncpS4vXeRVC	2022-04-04 11:47:32.857983	2022-04-04 11:47:32.857983
+5	user2	ruse2	user2@amazon.com	$2a$12$bSBCTPq0jbfiQ51nqQBptO2HhSEKFibRWFMBtFiwhBKi3WisrYuAa	2022-04-04 11:49:23.826456	2022-04-04 11:49:23.826456
+6	Agnieszka	Nowak	agnieszka111@example.com	$2a$08$Qluwd05MzSrboESVXB16W.0oZsz1pjnPr12SmnvbMswywBHmD9PlO	2022-03-31 00:00:00	2022-03-31 00:00:00
+7	Kamil	Nowy	kamil111@example.com	$2a$08$Qluwd05MzSrboESVXB16W.0oZsz1pjnPr12SmnvbMswywBHmD9PlO	2022-03-31 00:00:00	2022-03-31 00:00:00
+8	place1	place2	yuceltanebiri2@outlook.com	$2a$12$V6AhBUrfXXEdWmWdv86/xOgeH08dHirKKN02uiaRRguA/nUlfA3n2	2022-04-12 14:20:34.823356	2022-04-12 14:20:34.823356
+9	yucell	ebırı	ashdjsadha@hotmail.com	$2a$12$K2aGxDT3udb9PPGIlTuIPel3yLiy1rswIRhYjK./Su2JFgLHWZ7j6	2022-04-12 14:21:52.211198	2022-04-12 14:21:52.211198
+10	yuceltan	ebiri	yuceltan@gmail.com	$2a$12$msc9riT3/5Np5Y4riUQfbOVowEtJucGAS8826/s1dHACgWwrbUo9O	2022-04-12 14:23:37.024528	2022-04-12 14:23:37.024528
+11	yuceltan	ebiri	yuceltanebiri@gmail.com	$2a$12$z3QcBi/zY60OVcWGJD5HzeewyL4wbFfVjW4h325GPCUhmSqL55eza	2022-04-12 14:25:02.447256	2022-04-12 14:25:02.447256
+12	Yücel	Ebiri	kdjfsdkfjds@sdad	$2a$12$imfQ5MDyr3YwKbqE/i8Luu6IsJfBOUiabBNZpYf6f0ILjPpCmtTSa	2022-04-12 14:29:13.90575	2022-04-12 14:29:13.90575
+13	place	place	place@place.com	$2a$12$D7fwiSZEBkNgsoJYQ/DMf.kvePFEt7H7n2J1Jf4OxxPCiSiYod/xi	2022-04-12 14:33:53.646924	2022-04-12 14:33:53.646924
+14	place2	place2	place2@place2.com	$2a$12$N0cs.iU.HZcTvXmxyL8GquIuXenRg2XLs6v4BBw1vdsv4O8cw3zYG	2022-04-12 14:37:10.137342	2022-04-12 14:37:10.137342
+15	Yuceltan1	Ebiri2	yuceltanebiri@mynet.com	$2a$12$MdsSKY8mV3x9MBRe/keuWO5N8.67dDUKgS5HyanJnnpRPvtznfgCq	2022-04-12 18:18:44.287838	2022-04-12 18:18:44.287838
+16	user11	user12	user11@gmail.com	$2a$12$.3HdOraraGreVp9OaJ/lBuA/mOaql/2le6DxZD/0fJMQCpC8a5LI.	2022-04-12 18:22:22.147799	2022-04-12 18:22:22.147799
+17	yyy	yyy	ebiri@outlook.com	$2a$12$tqnS/Ot8sCCmOye8mjsKsOG.qKPaO/7cFjdpy58shzWeEBfV6cc8q	2022-04-24 21:02:35.526841	2022-04-24 21:02:35.526841
+\.
+
+
+--
+-- TOC entry 3330 (class 0 OID 0)
+-- Dependencies: 211
+-- Name: posts_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.posts_id_seq', 8, true);
+
+
+--
+-- TOC entry 3331 (class 0 OID 0)
+-- Dependencies: 209
+-- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.users_id_seq', 17, true);
+
+
+--
+-- TOC entry 3178 (class 2606 OID 32776)
+-- Name: posts posts_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.posts
+    ADD CONSTRAINT posts_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 3176 (class 2606 OID 24615)
+-- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.users
+    ADD CONSTRAINT users_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 3174 (class 1259 OID 24616)
+-- Name: users_email_idx; Type: INDEX; Schema: public; Owner: postgres
+--
+
+CREATE UNIQUE INDEX users_email_idx ON public.users USING btree (email);
+
+
+--
+-- TOC entry 3179 (class 2606 OID 32777)
+-- Name: posts posts_owner_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.posts
+    ADD CONSTRAINT posts_owner_id_fkey FOREIGN KEY (owner_id) REFERENCES public.users(id);
+
+
+-- Completed on 2022-04-25 00:03:48
+
+--
+-- PostgreSQL database dump complete
+--
+
+-- Completed on 2022-04-25 00:03:48
+
+--
+-- PostgreSQL database cluster dump complete
+--
+

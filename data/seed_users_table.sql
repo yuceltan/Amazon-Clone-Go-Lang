@@ -1,0 +1,3 @@
+INSERT INTO users (first_name, last_name, email, password, created_at, updated_at) VALUES ('Agnieszka', 'Nowak', 'agnieszka111@example.com', '$2a$08$Qluwd05MzSrboESVXB16W.0oZsz1pjnPr12SmnvbMswywBHmD9PlO','2022-03-31 00:00:00', '2022-03-31 00:00:00');
+INSERT INTO users (first_name, last_name, email, password, created_at, updated_at) VALUES ('Kamil', 'Nowy', 'kamil111@example.com', '$2a$08$Qluwd05MzSrboESVXB16W.0oZsz1pjnPr12SmnvbMswywBHmD9PlO','2022-03-31 00:00:00', '2022-03-31 00:00:00');
+INSERT INTO users (first_name, last_name, email, password, created_at, updated_at) VALUES ('Szymon', 'Kowalski', 'szymonl111@example.com', '$2a$08$Qluwd05MzSrboESVXB16W.0oZsz1pjnPr12SmnvbMswywBHmD9PlO','2022-03-31 00:00:00', '2022-03-31 00:00:00');

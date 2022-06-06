@@ -1,0 +1,150 @@
+
+  body {
+    background-color: rgb(255, 255, 255);
+    font-size: 13px;
+    line-height: 19px;
+    color: #111;
+    font-family: Arial,sans-serif;
+}
+  h1 {
+    color: rgb(0, 0, 0);
+  }
+
+  input[type=submit] {
+    background-color: #f0c14b;
+    border: 0;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    margin: 0;
+    cursor: pointer;
+    font-family: Arial,sans-serif;
+    white-space: nowrap;
+    display: block;
+    line-height: 29px;
+    outline: 0;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 70px,72px;
+    text-decoration: none!important;
+    width: 20em;  height: 2em;
+    border-radius: 4px;
+    
+}
+
+
+    
+input[type=text] {
+  
+  width: 20em;  height: 2em;
+  border-radius: 4px;
+  font-family: "Amazon Ember",Arial,sans-serif;
+  display: block;
+  padding-left: 2px;
+  padding-bottom: 2px;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 19px;
+}
+  
+
+
+input[type=password] {
+  
+  width: 20em;  height: 2em;
+  border-radius: 4px;
+  font-family: "Amazon Ember",Arial,sans-serif;
+  display: block;
+  padding-left: 2px;
+  padding-bottom: 2px;
+  font-weight: 700;
+  
+}
+  
+  
+  .error {
+    color: rgb(255, 0, 0);
+  }
+  
+  div {
+    width: 320px;
+    padding: 10px;
+    border: 1px solid rgb(206, 206, 206);
+    margin: 0;
+    border-radius: 6px;
+  }
+
+  ul {  
+    list-style-type: none;  
+    margin: 0;  
+    padding: 0px;  
+    overflow: hidden;  
+    background-color: #0F1111;  
+  }  
+    
+  li {  
+    float: left;  
+  }  
+    
+  li a {  
+    display: block;  
+    color: rgb(255, 255, 255);   
+    text-align: center;  
+    padding: 10px 20px;  
+    text-decoration: none;  
+    font-family: inherit;
+    font-size: 14px;
+  }  
+  .active{  
+    background-color: #0F1111;  
+    
+  color: white;  
+  }  
+  li a:hover {  
+    background-color: orange;  
+    color: white;  
+  }  
+
+  * {
+    box-sizing: border-box;
+  }
+  
+  
+  form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid rgb(63, 63, 63);
+    float: left;
+    width: 50%;
+    background: #ffffff;
+    border-radius: 6px;
+  }
+  
+ 
+  form.example button {
+    float: left;
+    width: 5%;
+    padding: 10px;
+    background-color: #f0c14b;
+    height:35px;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+    border-radius: 6px;
+  }
+  
+  form.example button:hover {
+    background: #0b7dda;
+  }
+  
+  /* Clear floats */
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
